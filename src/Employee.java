@@ -7,13 +7,14 @@ public class Employee {
     private int salary;
     static private int id;
 
+
     public Employee (String lastName, String firstName, String surName, int department, int salary) {
         this.lastName = lastName;
         this.firstName = firstName;
         this.surName = surName;
         this.department = department;
         this.salary=salary;
-        id++
+        id++;
     }
     public String getLastName() {return lastName;}
     public String getFirstName() {return firstName;}
@@ -30,5 +31,7 @@ public class Employee {
         return "Сотрудник: " + "Фамилия: " + lastName + " Имя: " + firstName + " Отчество: " + surName + " Отдел №: " + department +
                 " Зарплата: " + salary;
     }
+
+
 }
 
