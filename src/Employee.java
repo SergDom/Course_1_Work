@@ -5,7 +5,12 @@ public class Employee {
 
     private int department;
     private int salary;
-    static private int id;
+    static int id=1;
+
+    public static int howManyEmployees() {
+       return id++;
+    }
+
 
 
     public Employee (String lastName, String firstName, String surName, int department, int salary) {
@@ -14,7 +19,7 @@ public class Employee {
         this.surName = surName;
         this.department = department;
         this.salary=salary;
-        id++;
+
     }
     public String getLastName() {return lastName;}
     public String getFirstName() {return firstName;}
@@ -29,7 +34,7 @@ public class Employee {
     @Override
     public String toString() {
         return "Сотрудник: " + "Фамилия: " + lastName + " Имя: " + firstName + " Отчество: " + surName + " Отдел №: " + department +
-                " Зарплата: " + salary;
+                " Зарплата: " + salary + " номер сотрудника: " + howManyEmployees();
     }
 
 
