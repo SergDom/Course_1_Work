@@ -1,4 +1,12 @@
 public class Main {
+
+//    public static void listOfEmployee (Employee[]) {
+//        for (int i = 0; i < employee.length - 1; i++)
+//            if (employee[i] != null)
+//                return ;
+//
+//    }
+
 //    public static int sumOfSalary(int[] employee) {
 //        int sum=0;
 //        for (int i = 0; i < employee.length; i++){
@@ -30,8 +38,8 @@ public class Main {
     public static void main(String[] args) {
         Employee[] employee = new Employee[10];
 
-
-//         static int listOfEmployees (int[] employee) {
+//
+//         static void Employee (int[] employee) {
 //            for (int i = 0; i < employee.length-1; i++)
 //                if (employee[i]!=null)
 //                    return employee[i];
@@ -40,13 +48,13 @@ public class Main {
 
         employee[0] = new Employee("Ivanov", "Ivan", "Ivanovich", 1, 150000);
         employee[1] = new Employee("Dmitriev", "Sergey", "Aleksandrovich", 2, 160000);
-        employee[2] = new Employee("Seleznev", "Aleksandr", "Alekseevich", 2, 145000);
-
+        employee[2] = new Employee("Seleznev", "Aleksander", "Alekseevich", 3, 145000);
+        employee[3] = new Employee("Petrov", "Ilia", "Sergeevich", 4, 180000);
 
         for (int i = 0; i < employee.length - 1; i++)
             if (employee[i] != null)
                 System.out.println(employee[i]);
-
+        System.out.println("Количество сотрудников: " + Employee.id);
 
     }
 
