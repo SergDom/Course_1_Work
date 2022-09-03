@@ -1,13 +1,14 @@
 public class Main {
 
-    public static Employee[] sumOfSalary(Employee[] employee) {
-            int sum = 0;
-        for (int i = 0; i < employee.length; i++){
-          sum += employee[i].getSalary();}
-        return employee;
-    }
-//    public static int minOfSalary(int[] employee) {
-//        int salary[] = new Employee(salary);
+//    public static void Employee[] sumOfSalary(Employee[] employee) {
+//            int sum = 0;
+//        for (int i = 0; i < employee.length; i++){
+//          sum += employee[i].getSalary();}
+//        return System.out.println(sum);
+//
+//    }
+//    public static int minOfSalary(Employee[] salary) {
+//        int salary[] = new Employee().getSalary();
 //        int min=0;
 //        for (int i = 0; i < salary.length; i++)
 //            if (min>salary[i]);{
@@ -42,8 +43,8 @@ public class Main {
                     System.out.println(employee[i]);
 
             System.out.println("Количество сотрудников: " + Employee.id);
-
-            System.out.println(sumOfSalary());
+//            System.out.println(minOfSalary(employee));
+//            sumOfSalary(employee);
 
         }
     }
