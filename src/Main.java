@@ -1,12 +1,14 @@
-public class Main {
+public class  Main {
+    static Employee[] employees = new Employee[10];
 
-//    public static void Employee[] sumOfSalary(Employee[] employee) {
-//            int sum = 0;
-//        for (int i = 0; i < employee.length; i++){
-//          sum += employee[i].getSalary();}
-//        return System.out.println(sum);
-//
-//    }
+
+    public static void sumOfSalary(Employee employee) {
+            int sum = 0;
+        for (int i = 0; i < employees.length; i++){
+          sum += employees[i].getSalary();}
+          System.out.println(sum);
+
+    }
 //    public static int minOfSalary(Employee[] salary) {
 //        int salary[] = new Employee().getSalary();
 //        int min=0;
@@ -30,21 +32,30 @@ public class Main {
 //    }
 
         public static void main (String[]args){
-            Employee[] employee = new Employee[10];
 
 
-            employee[0] = new Employee("Ivanov", "Ivan", "Ivanovich", 1, 150000);
-            employee[1] = new Employee("Dmitriev", "Sergey", "Aleksandrovich", 2, 160000);
-            employee[2] = new Employee("Seleznev", "Aleksander", "Alekseevich", 3, 145000);
-            employee[3] = new Employee("Petrov", "Ilia", "Sergeevich", 4, 180000);
+//            public static int listOfEmployee (Employee employee){
+//                for (int i = 0; i < employees.length - 1; i++) {
+//                    if (employees[i] != null)
+//                         employees[i]=employee;
+//                        break;
+//                }
+//            }
+            employees[0] = new Employee("Ivanov", "Ivan", "Ivanovich", 1, 150000);
+            employees[1] = new Employee("Dmitriev", "Sergey", "Aleksandrovich", 2, 160000);
+            employees[2] = new Employee("Seleznev", "Aleksander", "Alekseevich", 3, 145000);
+            employees[3] = new Employee("Petrov", "Ilia", "Sergeevich", 4, 180000);
 
-            for (int i = 0; i < employee.length - 1; i++)
-                if (employee[i] != null)
-                    System.out.println(employee[i]);
+//            for (int i = 0; i < employee.length - 1; i++)
+//                if (employee[i] != null)
+//                    System.out.println(employee[i]);
 
+//            System.out.println(listOfEmployee());
             System.out.println("Количество сотрудников: " + Employee.id);
+
 //            System.out.println(minOfSalary(employee));
-//            sumOfSalary(employee);
+
+//            sumOfSalary(Employee(employees[i].getSalary()));
 
         }
     }
