@@ -10,13 +10,17 @@ public class  Main {
             return sumSalary;
         }
 
-//    public static int minOfSalary(Employee[] salary) {
-//        int salary[] = new Employee().getSalary();
-//        int min=0;
-//        for (int i = 0; i < salary.length; i++)
-//            if (min>salary[i]);{
-//        return min;}
-//    }
+    public static int minOfSalary(Employee[] arr) {
+        int min = arr[0].getSalary();
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] != null) {
+                if (min > arr[i].getSalary()){
+                    min = arr[i].getSalary();
+                }
+            }else break;}
+            return min;
+        }
+
 //    public static int maxOfSalary(int[] employee) {
 //        int salary[] = new Employee(salary);
 //        int max=0;
@@ -49,7 +53,6 @@ public class  Main {
             Employee employee4 = new Employee("Petrov", "Ilia", "Sergeevich", 4, 180000);
 
 
-
             employees[0] = employee1;
             employees[1] = employee2;
             employees[2] = employee3;
@@ -65,6 +68,7 @@ public class  Main {
             System.out.println("Количество сотрудников: " + Employee.id);
 
             System.out.println("Сумма затрат по зарплате: " + sumOfSalary(employees));
+            System.out.println("Минимальная зарплата сотрудников: " + minOfSalary(employees));
 
 //            sumOfSalary(Employee(employees[i].getSalary()));
 
