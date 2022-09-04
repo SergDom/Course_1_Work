@@ -35,10 +35,12 @@ public class  Main {
         double sumSalary = 0;
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] != null) {
-                sumSalary = (sumSalary + arr[i].getSalary())/arr.length;
-            } else break;}
-        return sumSalary;
+                sumSalary = (sumSalary + arr[i].getSalary());
+            }
+            return sumSalary / arr.length;}
+            return sumSalary;
         }
+
 
 
 
@@ -46,13 +48,7 @@ public class  Main {
 
            Employee[] employees = new Employee[10];
 
-//            public static int listOfEmployee (Employee employee){
-//                for (int i = 0; i < employees.length - 1; i++) {
-//                    if (employees[i] != null)
-//                         employees[i]=employee;
-//                        break;
-//                }
-//            }
+
             Employee employee1 = new Employee("Ivanov", "Ivan", "Ivanovich", 1, 150000);
             Employee employee2 = new Employee("Dmitriev", "Sergey", "Aleksandrovich", 2, 160000);
             Employee employee3 = new Employee("Seleznev", "Aleksander", "Alekseevich", 3, 145000);
@@ -64,7 +60,6 @@ public class  Main {
             employees[2] = employee3;
             employees[3] = employee4;
 
-//            toString(employees);
 
             for (int i = 0; i < employees.length - 1; i++)
                 if (employees[i] != null)
@@ -77,7 +72,6 @@ public class  Main {
             System.out.println("Минимальная зарплата сотрудников: " + minOfSalary(employees));
             System.out.println("Максимальная зарплата сотрудников: " + maxOfSalary(employees));
             System.out.println("Средняя зарплата сотрудников: " + avrOfSalary(employees));
-//            sumOfSalary(Employee(employees[i].getSalary()));
 
         }
     }
