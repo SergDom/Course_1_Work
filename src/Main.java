@@ -33,16 +33,20 @@ public class  Main {
 
     public static double avrOfSalary(Employee [] arr) {
         double sumSalary = 0;
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] != null) {
-                sumSalary = (sumSalary + arr[i].getSalary());
+        for (int i = 0, j=0; i < arr.length; i++, j++) {
+            if (arr[j] != null) {
+                sumSalary = (sumSalary + arr[j].getSalary());
             }
             return sumSalary / arr.length;}
             return sumSalary;
         }
 
-
-
+    public static void employeeNames (Employee [] arr) {
+        for (int i = 0; i < arr.length; i++)
+            if (arr[i] != null) {
+                System.out.println(arr[i].getLastName() +" " + arr[i].getFirstName() + " " + arr[i].getSurName());
+            }
+        }
 
         public static void main (String[]args){
 
@@ -65,13 +69,14 @@ public class  Main {
                 if (employees[i] != null)
                     System.out.println(employees[i]);
 
-//            System.out.println(listOfEmployee());
             System.out.println("Количество сотрудников: " + Employee.id);
-
+            System.out.println("==================================");
             System.out.println("Сумма затрат по зарплате: " + sumOfSalary(employees));
             System.out.println("Минимальная зарплата сотрудников: " + minOfSalary(employees));
             System.out.println("Максимальная зарплата сотрудников: " + maxOfSalary(employees));
             System.out.println("Средняя зарплата сотрудников: " + avrOfSalary(employees));
+            System.out.println("==================================");
+            employeeNames(employees);
 
         }
     }
