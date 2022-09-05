@@ -52,9 +52,8 @@ public class  Main {
             }
         }
         public static void indexOfSalary (Employee [] arr, double index) {
-        for (int i = 0; i < arr.length; i++){
-              arr[i].getSalary()= arr[i].getSalary() * index + arr[i].getSalary();}
-
+        for (int i = 0; i < arr.length; i++) {
+              arr[i].getSalary() = arr[i].getSalary()*index + arr[i].getSalary(); }
                 }
 
         public static void main (String[]args){
@@ -94,7 +93,7 @@ public class  Main {
             System.out.println("==================================");
             employeeNames(employees);
             System.out.println("==================================");
-//            System.out.println(indexOfSalary(employees, 0.2));
+            System.out.println(indexOfSalary(employees[1], 1.2));
 
 
         }
