@@ -4,11 +4,11 @@ public class Employee {
     private String surName;
 
     private int department;
-    private int salary;
+    private double salary;
     static int id;
 
 
-    public Employee (String lastName, String firstName, String surName, int department, int salary) {
+    public Employee (String lastName, String firstName, String surName, int department, double salary) {
         this.lastName = lastName;
         this.firstName = firstName;
         this.surName = surName;
@@ -24,8 +24,8 @@ public class Employee {
     public int getDepartment() {return department;}
     public void setDepartment(int department) {this.department = department;}
 
-    public int getSalary() {return salary;}
-    public void setSalary(int salary) {this.salary = salary;}
+    public double getSalary() {return salary;}
+    public void setSalary(double salary) {this.salary = salary;}
 
     @Override
     public String toString() {

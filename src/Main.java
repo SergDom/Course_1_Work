@@ -6,8 +6,8 @@ public class  Main {
                 System.out.println((arr[i]));}
             }
         }
-    public static int sumOfSalary(Employee [] arr) {
-        int sumSalary = 0;
+    public static double sumOfSalary(Employee [] arr) {
+        double sumSalary = 0;
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] != null) {
                 sumSalary = sumSalary + arr[i].getSalary();
@@ -15,8 +15,8 @@ public class  Main {
             return sumSalary;
         }
 
-    public static int minOfSalary(Employee[] arr) {
-        int min = arr[0].getSalary();
+    public static double minOfSalary(Employee[] arr) {
+        double min = arr[0].getSalary();
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] != null) {
                 if (min > arr[i].getSalary()){
@@ -25,8 +25,8 @@ public class  Main {
             }else break;}
             return min;
         }
-    public static int maxOfSalary(Employee[] arr) {
-        int max = arr[0].getSalary();
+    public static double maxOfSalary(Employee[] arr) {
+        double max = arr[0].getSalary();
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] != null) {
                 if (max < arr[i].getSalary()){
@@ -51,6 +51,11 @@ public class  Main {
                 System.out.println(arr[i].getLastName() +" " + arr[i].getFirstName() + " " + arr[i].getSurName());
             }
         }
+        public static void indexOfSalary (Employee [] arr, double index) {
+        for (int i = 0; i < arr.length; i++){
+             arr[i].getSalary() = arr[i].getSalary() * index + arr[i].getSalary();}
+
+                }
 
         public static void main (String[]args){
 
@@ -89,6 +94,9 @@ public class  Main {
             System.out.println("Средняя зарплата сотрудников: " + avrOfSalary(employees));
             System.out.println("==================================");
             employeeNames(employees);
+            System.out.println("==================================");
+//            System.out.println(indexOfSalary(employees, 0.2));
+
 
         }
     }
