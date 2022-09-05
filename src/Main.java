@@ -53,7 +53,7 @@ public class  Main {
         }
         public static void indexOfSalary (Employee [] arr, double index) {
         for (int i = 0; i < arr.length; i++){
-             arr[i].getSalary() = arr[i].getSalary() * index + arr[i].getSalary();}
+              arr[i].getSalary()= arr[i].getSalary() * index + arr[i].getSalary();}
 
                 }
 
@@ -83,7 +83,6 @@ public class  Main {
             employees[7] = employee8;
             employees[8] = employee9;
             employees[9] = employee10;
-
 
             listOfEmployee(employees);
             System.out.println("Количество сотрудников: " + Employee.id);
