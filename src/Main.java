@@ -51,10 +51,63 @@ public class  Main {
                 System.out.println(arr[i].getLastName() +" " + arr[i].getFirstName() + " " + arr[i].getSurName());
             }
         }
-        public static void indexOfSalary (Employee [] arr, double index) {
+//        public static void indexOfSalary (Employee [] arr, double index) {
+//            for (int i = 0; i < arr.length; i++) {
+//              arr[i].getSalary() = arr[i].getSalary()*index + arr[i].getSalary(); }
+//                }
+    public static double minOfSalaryDepartment (Employee [] arr, int department) {
+        double minSalary = maxOfSalary(arr);
         for (int i = 0; i < arr.length; i++) {
-              arr[i].getSalary() = arr[i].getSalary()*index + arr[i].getSalary(); }
+            if (arr[i] != null && arr[i].getDepartment() == department) {
+                if (minSalary > arr[i].getSalary()) {
+                    minSalary = arr[i].getSalary();
                 }
+            }
+        }
+        return minSalary;
+    }
+    public static double maxOfSalaryDepartment (Employee [] arr, int department) {
+        double maxSalary = minOfSalary(arr);
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] != null && arr[i].getDepartment() == department) {
+                if (maxSalary < arr[i].getSalary()){
+                    maxSalary = arr[i].getSalary();
+                }
+            }
+        }
+        return maxSalary;
+    }
+
+    public static double sumOfSalaryDepartment(Employee [] arr, int department) {
+        double sumSalary = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] != null && arr[i].getDepartment() == department) {
+                sumSalary = sumSalary + arr[i].getSalary();
+            }
+        }
+        return sumSalary;
+    }
+
+    public static double avrOfSalaryDepartment(Employee[] arr, int department) {
+        double avrSalary = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] != null && arr[i].getDepartment() == department) {
+                avrSalary = avrSalary + arr[i].getSalary()/arr[i].getDepartment();
+            }
+        }
+        return avrSalary;
+    }
+
+
+
+
+
+    public static void employeeNamesDepartment (Employee [] arr, int department) {
+        for (int i = 0; i < arr.length; i++)
+            if (arr[i].getDepartment() == department) {
+                System.out.println(arr[i].getLastName() +" " + arr[i].getFirstName() + " " + arr[i].getSurName() + " " + arr[i].getSalary());
+            }
+    }
 
         public static void main (String[]args){
 
@@ -93,9 +146,12 @@ public class  Main {
             System.out.println("==================================");
             employeeNames(employees);
             System.out.println("==================================");
-            System.out.println(indexOfSalary(employees[1], 1.2));
-
-
+//            System.out.println(indexOfSalary(employees[1], 1.2));
+            System.out.println("Минимальная зарплата сотрудника в отделе: " + minOfSalaryDepartment(employees, 4));
+            System.out.println("Максимальная зарплата сотрудника в отделе: " + maxOfSalaryDepartment(employees, 2));
+            System.out.println("Сумма затрат по зарплате в отделе: " + sumOfSalaryDepartment(employees, 2));
+            System.out.println("Средняя зарплата сотрудников в отделе: " + avrOfSalaryDepartment(employees, 2));
+//            employeeNamesDepartment(2);
         }
     }
 
