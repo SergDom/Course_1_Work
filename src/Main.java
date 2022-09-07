@@ -102,7 +102,7 @@ public class  Main {
     }
 
 
-    public static void indexOfSalaryDepartment(Employee employees[] , double departmentIndex, int department) {
+    public static void indexOfSalaryDepartment(Employee employees[] ,  int department, double departmentIndex) {
         for (int i = 0; i < employees.length; i++) {
             if (employees[i] != null && employees[i].getDepartment() == department) {
                 double increaseSalary = employees[i].getSalary() + employees[i].getSalary()*departmentIndex;
@@ -190,9 +190,10 @@ public class  Main {
             System.out.println("Средняя зарплата сотрудников в отделе: " + avrOfSalaryDepartment(employees, 2));
             System.out.println("==================================");
             employeeNamesDepartment(employees, 2);
-            indexOfSalaryDepartment(employees,0.4,3);
+            indexOfSalaryDepartment(employees,2,0.4);
+            employeeNamesDepartment(employees, 2);
             employeeWithLowestSalary(employees, 150000);
-            employeeWithHighestSalary(employees, 180000);
+            employeeWithHighestSalary(employees, 200000);
 
         }
     }
