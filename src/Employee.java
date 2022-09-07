@@ -5,7 +5,8 @@ public class Employee {
 
     private int department;
     private double salary;
-    static int id;
+    private int id;
+    private static int counter=1;
 
 
     public Employee (String lastName, String firstName, String surName, int department, double salary) {
@@ -14,7 +15,7 @@ public class Employee {
         this.surName = surName;
         this.department = department;
         this.salary=salary;
-        id++;
+        id = counter++;
 
     }
     public String getLastName() {return lastName;}
@@ -26,6 +27,7 @@ public class Employee {
 
     public double getSalary() {return salary;}
     public void setSalary(double salary) {this.salary = salary;}
+    public int getId() {return this.id;}
 
     @Override
     public String toString() {

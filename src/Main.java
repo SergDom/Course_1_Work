@@ -51,11 +51,12 @@ public class  Main {
                 System.out.println(arr[i].getLastName() +" " + arr[i].getFirstName() + " " + arr[i].getSurName());
             }
         }
-//        public static void indexOfSalary (Employee arr[], double index) {
-//            for (int i = 0; i < arr.length; i++) {
-//             arr[i].getSalary() = arr[i].getSalary()+ arr[i].getSalary()*index;
-//            }
-//        }
+        public static void indexOfSalary (Employee employees[], double index) {
+            for (int i = 0; i < employees.length; i++) {
+             double newSalary = employees[i].getSalary() + employees[i].getSalary()*index;
+             employees[i].setSalary(newSalary);
+            }
+        }
 
     public static double minOfSalaryDepartment (Employee [] arr, int department) {
         double minSalary = maxOfSalary(arr);
@@ -101,8 +102,21 @@ public class  Main {
     }
 
 
+    public static void indexOfSalaryDepartment(Employee employees[] , double departmentIndex, int department) {
+        for (int i = 0; i < employees.length; i++) {
+            if (employees[i] != null && employees[i].getDepartment() == department) {
+                double increaseSalary = employees[i].getSalary() + employees[i].getSalary()*departmentIndex;
+                employees[i].setSalary(increaseSalary);
+            }
+        }
+    }
 
-
+//    public static void indexOfSalary (Employee employees[], double index) {
+//        for (int i = 0; i < employees.length; i++) {
+//            double newSalary = employees[i].getSalary() + employees[i].getSalary()*index;
+//            employees[i].setSalary(newSalary);
+//        }
+//    }
 
     public static void employeeNamesDepartment (Employee [] arr, int department) {
         for (int i = 0; i < arr.length; i++)
@@ -115,8 +129,8 @@ public class  Main {
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] != null) {
                 if (arr[i].getSalary() < exampleSalary) {
-                    System.out.println(arr[i].getLastName() + " " + arr[i].getFirstName() + " " +
-                            arr[i].getLastName()+ " с зарплатой " + arr[i].getSalary() + " руб");
+                    System.out.println("Табельный номер: " + arr[i].getId() + " Фамилия: " + arr[i].getLastName() + " Имя: " + arr[i].getFirstName() + " Отчество: " +
+                            arr[i].getSurName()+ " с зарплатой: " + arr[i].getSalary() + " руб");
                 }
             }
         }
@@ -125,8 +139,8 @@ public class  Main {
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] != null) {
                 if (arr[i].getSalary() > exampleSalary) {
-                    System.out.println(arr[i].getLastName() + " " + arr[i].getFirstName() + " " +
-                            arr[i].getLastName()+ " с зарплатой " + arr[i].getSalary() + " руб");
+                    System.out.println("Табельный номер: " + arr[i].getId() + " Фамилия: " + arr[i].getLastName() + " Имя: " + arr[i].getFirstName() + " Отчество: " +
+                            arr[i].getSurName()+ " с зарплатой: " + arr[i].getSalary() + " руб");
                 }
             }
         }
@@ -159,7 +173,6 @@ public class  Main {
             employees[9] = employee10;
 
             listOfEmployee(employees);
-            System.out.println("Количество сотрудников: " + Employee.id);
             System.out.println("==================================");
             System.out.println("Сумма затрат по зарплате: " + sumOfSalary(employees));
             System.out.println("Минимальная зарплата сотрудников: " + minOfSalary(employees));
@@ -168,13 +181,16 @@ public class  Main {
             System.out.println("==================================");
             employeeNames(employees);
             System.out.println("==================================");
-//            System.out.println(indexOfSalary(employees[1], 1.2));
+            indexOfSalary(employees,0.2);
+            listOfEmployee(employees);
+            System.out.println("==================================");
             System.out.println("Минимальная зарплата сотрудника в отделе: " + minOfSalaryDepartment(employees, 4));
             System.out.println("Максимальная зарплата сотрудника в отделе: " + maxOfSalaryDepartment(employees, 2));
             System.out.println("Сумма затрат по зарплате в отделе: " + sumOfSalaryDepartment(employees, 2));
             System.out.println("Средняя зарплата сотрудников в отделе: " + avrOfSalaryDepartment(employees, 2));
             System.out.println("==================================");
             employeeNamesDepartment(employees, 2);
+            indexOfSalaryDepartment(employees,0.4,3);
             employeeWithLowestSalary(employees, 150000);
             employeeWithHighestSalary(employees, 180000);
 
