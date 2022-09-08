@@ -16,7 +16,7 @@ public class  Main {
         }
 
     public static double minOfSalary(Employee[] arr) {
-        double min = arr[0].getSalary();
+        double min = maxOfSalary(arr);
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] != null) {
                 if (min > arr[i].getSalary()){
@@ -26,7 +26,7 @@ public class  Main {
             return min;
         }
     public static double maxOfSalary(Employee[] arr) {
-        double max = arr[0].getSalary();
+        double max = 0;
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] != null) {
                 if (max < arr[i].getSalary()){
@@ -111,13 +111,6 @@ public class  Main {
         }
     }
 
-//    public static void indexOfSalary (Employee employees[], double index) {
-//        for (int i = 0; i < employees.length; i++) {
-//            double newSalary = employees[i].getSalary() + employees[i].getSalary()*index;
-//            employees[i].setSalary(newSalary);
-//        }
-//    }
-
     public static void employeeNamesDepartment (Employee [] arr, int department) {
         for (int i = 0; i < arr.length; i++)
             if (arr[i].getDepartment() == department) {
@@ -149,7 +142,6 @@ public class  Main {
 
            Employee[] employees = new Employee[10];
 
-
             Employee employee1 = new Employee("Ivanov", "Ivan", "Ivanovich", 1, 150000);
             Employee employee2 = new Employee("Dmitriev", "Sergey", "Aleksandrovich", 2, 160000);
             Employee employee3 = new Employee("Seleznev", "Aleksander", "Alekseevich", 3, 145000);
@@ -159,7 +151,7 @@ public class  Main {
             Employee employee7 = new Employee("Osipova", "Galina", "Sergeevna", 2, 143000);
             Employee employee8 = new Employee("Smirnova", "Sofia", "Dmitreevna", 1, 167000);
             Employee employee9 = new Employee("Fedorova", "Diana", "Vladimirovna", 3, 125000);
-            Employee employee10 = new Employee("Pavlova", "Elena", "Aleksandrovna", 4, 171000);
+            Employee employee10 = new Employee("Pavlova", "Elena", "Aleksandrovna", 4, 190000);
 
             employees[0] = employee1;
             employees[1] = employee2;
@@ -175,8 +167,8 @@ public class  Main {
             listOfEmployee(employees);
             System.out.println("==================================");
             System.out.println("Сумма затрат по зарплате: " + sumOfSalary(employees));
-            System.out.println("Минимальная зарплата сотрудников: " + minOfSalary(employees));
-            System.out.println("Максимальная зарплата сотрудников: " + maxOfSalary(employees));
+            System.out.println("Минимальная зарплата сотрудника: " + minOfSalary(employees));
+            System.out.println("Максимальная зарплата сотрудника: " + maxOfSalary(employees));
             System.out.println("Средняя зарплата сотрудников: " + avrOfSalary(employees));
             System.out.println("==================================");
             employeeNames(employees);
@@ -191,9 +183,10 @@ public class  Main {
             System.out.println("==================================");
             employeeNamesDepartment(employees, 2);
             indexOfSalaryDepartment(employees,2,0.4);
-            employeeNamesDepartment(employees, 2);
+            employeeNamesDepartment(employees, 3);
+            System.out.println("==================================");
             employeeWithLowestSalary(employees, 150000);
-            employeeWithHighestSalary(employees, 200000);
+            employeeWithHighestSalary(employees, 230000);
 
         }
     }
