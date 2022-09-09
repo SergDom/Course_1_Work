@@ -6,28 +6,50 @@ public class Employee {
     private int department;
     private double salary;
     private int id;
-    private static int counter=1;
+    private static int counter = 1;
 
 
-    public Employee (String lastName, String firstName, String surName, int department, double salary) {
+    public Employee(String lastName, String firstName, String surName, int department, double salary) {
         this.lastName = lastName;
         this.firstName = firstName;
         this.surName = surName;
         this.department = department;
-        this.salary=salary;
+        this.salary = salary;
         id = counter++;
 
     }
-    public String getLastName() {return lastName;}
-    public String getFirstName() {return firstName;}
-    public String getSurName() {return surName;}
 
-    public int getDepartment() {return department;}
-    public void setDepartment(int department) {this.department = department;}
+    public String getLastName() {
+        return lastName;
+    }
 
-    public double getSalary() {return salary;}
-    public void setSalary(double salary) {this.salary = salary;}
-    public int getId() {return this.id;}
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getSurName() {
+        return surName;
+    }
+
+    public int getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(int department) {
+        this.department = department;
+    }
+
+    public double getSalary() {
+        return salary;
+    }
+
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
+
+    public int getId() {
+        return this.id;
+    }
 
     @Override
     public String toString() {
